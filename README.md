@@ -1,2 +1,5 @@
 # realtime-auto-translate-using-clipboard
-just for understande comment inyoutube from another language(I usually use it on Hololive)
+just for understande comment in youtube from another Japanese(I usually use it on Hololive).
+using google translate tkinker and clipboard on python to create this.
+only copy(ctrl+c) to selected sentence to translate.
+you can edit which language yoou want to translate yourself!
