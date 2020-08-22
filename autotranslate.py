@@ -27,20 +27,11 @@ lastdata=getclipboard()
 lastdatatranslate=translt(lastdata)
 def tkloop():
     global lastdata,lastdatatranslate
-    # global state_Ckey,button_Ckey
-    # while True:
-    #     now_Ckey=win32api.GetKeyState(button_Ckey)
-    #     if now_Ckey<0 and now_Ckey!=state_Ckey :
-    #         state_Ckey=now_Ckey
-    #         break
-    #     time.sleep(0.01)
-    
     if  win32api.GetKeyState(0x43)<0:
         data=getclipboard()
         if data != lastdata:
             d=translt(data)
             lastdatatranslate=d
-            # print(u"data =\t{}\nenglish =\t{}\nthai =\t{}".format(data,en,th))
             lastdata=data
         else:
             d=lastdatatranslate
@@ -48,8 +39,6 @@ def tkloop():
         text.insert(1.0,d)
     text.after(50, tkloop)
 
-button_c=0x43
-state_c=win32api.GetKeyState(button_c)
 
 root = tk.Tk()
 root.title("auto translate")
@@ -60,10 +49,3 @@ text.insert(1.0,lastdatatranslate)
 text.pack()
 tkloop()
 root.mainloop()
-# while now_Ckey<0 and now_Ckey!=state_Ckey :
-#     now_Ckey=win32api.GetKeyState(button_Ckey)
-#     print(state_Ckey,now_Ckey)
-#     if now_Ckey<0 and now_Ckey!=state_Ckey :
-#         state_Ckey=now_Ckey
-#         print('aaaaaa')
-#     time.sleep(0.01)
